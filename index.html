@@ -75,8 +75,10 @@
             }
 
             .paginas {
-                display: none;
+                /* display: flex; */
+                flex-direction: column;
             }
+
 
             .marca {
                 display: flex;
@@ -88,11 +90,11 @@
 
 
         }
-        @media (min-width: 483px) {
+        /* @media (min-width: 483px) {
             paginas {
             display: inline-block;
             }
-        }
+        } */
     </style>
 </head>
 <body>
@@ -143,7 +145,7 @@
             
             menu.addEventListener('click', function(e) {
                 if (paginas.style.display === "none") {
-                        paginas.style.display = "block";
+                        paginas.style.display = "flex";
                     } else {
                         paginas.style.display = "none";
                     }
@@ -153,7 +155,7 @@
                 if (window.innerWidth <= 482) { 
                     paginas.style.display = "none";
                 } else {
-                    paginas.style.display = "block";
+                    paginas.style.display = "flex";
                 }
             });
 
