@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>one page layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        html, body { height: 100vh;}
+        body {
+            margin: 0;
+            font-size: 16px;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        a {
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .material-icons.md-36 { font-size: 36px; }
+        .material-icons.md-light { color: rgba(255, 255, 255, 1); }
+        .page {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            width: 100%;
+            max-width: 770px;
+            background-color: bisque;
+        }
+
+        .wrapper {
+            position: relative;
+        }
+
+        /* header {
+            position: fixed;
+            top: 0;
+            background-color: teal
+        } */
+        nav {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-flow: row wrap;
+            min-width: 100%;
+            background-color: rgb(42, 114, 197); 
+        }
+
+        nav a {
+            padding: 1rem;
+            color: white;
+        }
+        #menu {
+            display:none;
+        }
+        .brand {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            color: white;
+        }
+
+
+
+        @media (max-width: 482px) {
+
+            #menu {
+                display: block;
+                padding-right: 1.2rem;
+            }
+
+            .paginas {
+                display: none;
+            }
+
+            .marca {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: center;
+                justify-content: space-between;
+                min-width: 100vw;
+            }
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <header>
+            <nav>
+                <div class="marca">
+                    <h1 class="brand">Casa</h1>
+                    <h1><i class="material-icons md-36 md-light" id="menu">menu</i></h1>
+                </div>
+
+                <div class="paginas">
+                    <a href="#page-1">Pagina 1</a>
+                    <a href="#page-2">Pagina 2</a>
+                    <a href="#page-3">Pagina 3</a>
+                    <a href="#page-4">Pagina 4</a>
+                </div>
+            </nav>
+        </header>
+
+        <div class="page" id="page-1">
+                <div class="content">
+                        Página 1 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam id nihil excepturi quam! Debitis, est.
+                </div>
+            </div>
+            <div class="page" id="page-2">
+                    <div class="content">
+                        Página 2 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam id nihil excepturi quam! Debitis, est.
+                    </div>
+            </div>
+            <div class="page" id="page-3">
+                    <div class="content">
+                        Página 3 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam id nihil excepturi quam! Debitis, est.
+                    </div>
+            </div>
+            <div class="page" id="page-4">
+                    <div class="content">
+                        Página 4 - Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ipsam id nihil excepturi quam! Debitis, est.
+                    </div>
+            </div>
+    </div>
+    <script>
+        var menu = document.getElementById('menu');
+        var paginas = document.getElementsByClassName("paginas")[0];
+
+        menu.addEventListener('click', function(e) {
+            console.log(paginas);
+
+            if (paginas.style.display === "none") {
+                    paginas.style.display = "block";
+                } else {
+                    paginas.style.display = "none";
+                }
+            });
+    </script>
+</body>
+</html>
