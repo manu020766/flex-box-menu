@@ -88,6 +88,11 @@
 
 
         }
+        @media (min-width: 483px) {
+            paginas {
+            display: inline-block;
+            }
+        }
     </style>
 </head>
 <body>
@@ -130,18 +135,30 @@
             </div>
     </div>
     <script>
-        var menu = document.getElementById('menu');
-        var paginas = document.getElementsByClassName("paginas")[0];
 
-        menu.addEventListener('click', function(e) {
-            console.log(paginas);
+        document.addEventListener("DOMContentLoaded", function(event) {
+            var menu = document.getElementById('menu');
+            var paginas = document.getElementsByClassName("paginas")[0];
+            
+            
+            menu.addEventListener('click', function(e) {
+                if (paginas.style.display === "none") {
+                        paginas.style.display = "block";
+                    } else {
+                        paginas.style.display = "none";
+                    }
+            });
 
-            if (paginas.style.display === "none") {
-                    paginas.style.display = "block";
-                } else {
+            window.addEventListener('resize', function(event) {
+                if (window.innerWidth <= 482) { 
                     paginas.style.display = "none";
+                } else {
+                    paginas.style.display = "block";
                 }
             });
+
+        });
+
     </script>
 </body>
 </html>
